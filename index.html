@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JK PRIME INFO CEL - Assistência Técnica Especializada em Celulares</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+    /* Estilos Gerais */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #333;
+    --background-color: #f4f7f9;
+    --text-color: #555;
+    --white: #fff;
+    --light-gray: #eee;
+    --dark-blue: #0056b3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Header */
+header {
+    background-color: var(--white);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--light-gray);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+header img {
+    height: 50px;
+    margin-right: 15px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Botão padrão */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--dark-blue);
+}
+
+/* Seções */
+section {
+    padding: 60px 0;
+}
+
+section:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hero */
+#home {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x1080?text=Fundo+do+Site') no-repeat center center/cover;
+    color: var(--white);
+    text-align: center;
+    padding: 150px 0;
+}
+
+#home h2 {
+    color: var(--white);
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+#home p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Grid de Serviços e Produtos */
+.servicos-grid, .produtos-grid, .depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.servico-item, .produto-item, .depoimento-item {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servico-item:hover, .produto-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.servico-item img, .produto-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.produto-item span {
+    display: block;
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Vídeos */
+#videos .video-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+#videos .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#videos video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* Depoimentos */
+#depoimentos .depoimento-item {
+    font-style: italic;
+}
+
+#depoimentos .depoimento-item h4 {
+    margin-top: 10px;
+    font-style: normal;
+    color: var(--primary-color);
+}
+
+/* Contato */
+#contato {
+    text-align: center;
+}
+
+#contato p {
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+#contato-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#contato-form label {
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+#contato-form input, #contato-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+#form-message {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.social-links {
+    margin-top: 2rem;
+}
+
+.social-links a {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 20px 0;
+    text-align: center;
+    border-top: 5px solid var(--primary-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    header nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    header nav ul li {
+        margin: 5px 10px;
+    }
+
+    #home h2 {
+        font-size: 2.5rem;
+    }
+
+    #servicos .servicos-grid, #produtos .produtos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="logo">JK PRIME INFO CEL</h1>
+            <img src="img/LOGO.png" alt="Logo JK Prime Info Cel">
+            <nav>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#videos">Vídeos</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h2>Seu Smartphone em Boas Mãos</h2>
+                <p>Assistência técnica especializada para celulares e venda de acessórios de qualidade.</p>
+                <a href="#contato" class="btn">Solicite um Orçamento</a>
+            </div>
+        </section>
+
+        <section id="servicos">
+            <div class="container">
+                <h3>Nossos Serviços</h3>
+                <div class="servicos-grid">
+                    <div class="servico-item">
+                        <img src="img/reparo_tela.jpg" alt="Reparo de Tela">
+                        <h4>Reparo de Tela</h4>
+                        <p>Troca de telas quebradas com peças de alta qualidade e garantia.</p>
+                    </div>
+                    <div class="servico-item">
+                        <img src="img/troca_bateria.jpg" alt="Troca de Bateria">
+                        <h4>Troca de Bateria</h4>
+                        <p>Substituição de baterias com problemas de carga e vida útil, com componentes originais ou de primeira linha.</p>
+                    </div>
+                    <div class="servico-item">
+                        <img src="IMG/Reparo de Software.png" alt="Reparo de Software">
+                        <h4>Reparo de Software</h4>
+                        <p>Solução para problemas de software, travamentos, lentidão e configurações avançadas.</p>
+                    </div>
+                    <div class="servico-item">
+                        <img src="IMG/Outros Reparos.jpg" alt="Outros Reparos">
+                        <h4>Outros Reparos</h4>
+                        <p>Consertos de placa, câmeras, conectores de carga, botões e muito mais.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="produtos">
+            <div class="container">
+                <h3>Produtos</h3>
+                <div class="produtos-grid">
+                    <div class="produto-item">
+                        <img src="https://via.placeholder.com/300x300" alt="Capa Protetora">
+                        <h4>Capa Protetora</h4>
+                        <p>Capas de alta resistência para diversos modelos, com designs exclusivos.</p>
+                        <span>R$ 35,00</span>
+                    </div>
+                    <div class="produto-item">
+                        <img src="https://via.placeholder.com/300x300" alt="Carregador Rápido">
+                        <h4>Carregador Rápido</h4>
+                        <p>Carregadores originais e de alta performance para uma carga eficiente.</p>
+                        <span>R$ 79,90</span>
+                    </div>
+                    <div class="produto-item">
+                        <img src="https://via.placeholder.com/300x300" alt="Película de Vidro">
+                        <h4>Película de Vidro</h4>
+                        <p>Proteção extra para a tela do seu aparelho, com aplicação profissional.</p>
+                        <span>R$ 20,00</span>                        
+                    </div>
+                    <div class="produto-item">
+                        <img src="https://via.placeholder.com/300x300" alt="Capa Protetora">
+                        <h4>Capa Protetora</h4>
+                        <p>Capas de alta resistência para diversos modelos, com designs exclusivos.</p>
+                        <span>R$ 35,00</span>
+                    </div>
+                    <div class="produto-item">
+                        <img src="https://via.placeholder.com/300x300" alt="Capa Protetora">
+                        <h4>Capa Protetora</h4>
+                        <p>Capas de alta resistência para diversos modelos, com designs exclusivos.</p>
+                        <span>R$ 35,00</span>
+                    </div>
+                    <div class="produto-item">
+                        <img src="https://via.placeholder.com/300x300" alt="Capa Protetora">
+                        <h4>Capa Protetora</h4>
+                        <p>Capas de alta resistência para diversos modelos, com designs exclusivos.</p>
+                        <span>R$ 35,00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="videos">
+            <div class="container">
+                <h3>Vídeos Tutoriais e Demonstrações</h3>
+                <div class="video-container">
+                    <div class="video-wrapper">
+                        <video src="VIDEO/jk-prime-info-cel.mp4" controls poster="https://via.placeholder.com/400x300?text=Video+1"></video>
+                    </div>
+                    <div class="video-wrapper">
+                        <video src="VIDEO/Jk Prime Info Cel 3.mp4" controls poster="https://via.placeholder.com/400x300?text=Video+2"></video>
+                    </div>
+                    <div class="video-wrapper">
+                        <video src="VIDEO/Faça O Se Cartao Digital Agora.mp4" controls poster="https://via.placeholder.com/400x300?text=Video+3"></video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="depoimentos">
+            <div class="container">
+                <h3>O Que Nossos Clientes Dizem</h3>
+                <div class="depoimentos-grid">
+                    <div class="depoimento-item">
+                        <p>"Excelente serviço! Meu celular ficou como novo e o atendimento foi super rápido e profissional. Recomendo!"</p>
+                        <h4>- João Silva</h4>
+                    </div>
+                    <div class="depoimento-item">
+                        <p>"Comprei uma capa e uma película de ótima qualidade. A equipe me ajudou a escolher o melhor para o meu aparelho."</p>
+                        <h4>- Maria Souza</h4>
+                    </div>
+                    <div class="depoimento-item">
+                        <p>"Preço justo e serviço impecável. O reparo de software resolveu todos os problemas do meu celular. Parabéns!"</p>
+                        <h4>- Pedro Henrique</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="container">
+                <h3>Entre em Contato</h3>
+                <p>Envie sua mensagem e retornaremos o mais breve possível.</p>
+                <form id="contato-form">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="assunto">Assunto:</label>
+                    <input type="text" id="assunto" name="assunto">
+
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+                    <button type="submit" class="btn">Enviar Mensagem</button>
+                </form>
+                <div id="form-message"></div>
+                <div class="social-links">
+                    <a href="https://wa.me/5511992496498" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/dicacerta.gastar?igsh=emoxczlycXZyMTZ1" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/1Gp2oAvHKB/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@primeinfocel" target="_blank" aria-label="youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://t.me/jkprimeinfocel" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 JK PRIME INFO CEL. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    document.addEventListener('DOMContentLoaded', () => {
+    // Adiciona rolagem suave para links de navegação
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Manipula o formulário de contato
+    const form = document.getElementById('contato-form');
+    const formMessage = document.getElementById('form-message');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Simula o envio do formulário
+        const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const mensagem = document.getElementById('mensagem').value;
+
+        // Validação básica (pode ser mais complexa)
+        if (nome && email && mensagem) {
+            formMessage.textContent = 'Mensagem enviada com sucesso! Em breve, entraremos em contato.';
+            formMessage.style.color = 'green';
+            form.reset();
+        } else {
+            formMessage.textContent = 'Por favor, preencha todos os campos obrigatórios.';
+            formMessage.style.color = 'red';
+        }
+
+        // Limpa a mensagem após 5 segundos
+        setTimeout(() => {
+            formMessage.textContent = '';
+        }, 5000);
+    });
+});
+</body>
+</html>
